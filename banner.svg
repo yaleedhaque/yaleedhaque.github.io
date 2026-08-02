@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="240" viewBox="0 0 1280 240">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0e16"/>
+      <stop offset="1" stop-color="#111c31"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00e5ff"/>
+      <stop offset="1" stop-color="#4e8bff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="240" fill="url(#bg)"/>
+  <g stroke="#16233c" stroke-width="1" opacity="0.7">
+    <line x1="0" y1="60" x2="1280" y2="60"/>
+    <line x1="0" y1="120" x2="1280" y2="120"/>
+    <line x1="0" y1="180" x2="1280" y2="180"/>
+    <line x1="320" y1="0" x2="320" y2="240"/>
+    <line x1="640" y1="0" x2="640" y2="240"/>
+    <line x1="960" y1="0" x2="960" y2="240"/>
+  </g>
+  <circle cx="64" cy="52" r="4" fill="#3ecf8e"/>
+  <text x="78" y="57" font-family="monospace" font-size="14" fill="#8a94a8" letter-spacing="2">SYS.BOOT &middot; ONLINE</text>
+  <text x="64" y="130" font-family="sans-serif" font-size="58" font-weight="700" fill="#e8ecf4">MD. YALEED HAQUE</text>
+  <text x="66" y="162" font-family="monospace" font-size="20" fill="#00e5ff" letter-spacing="3">C#/.NET  &middot;  KOTLIN  &middot;  LOCAL-FIRST SYSTEMS</text>
+  <circle cx="66" cy="196" r="5" fill="#3ecf8e"/>
+  <text x="82" y="201" font-family="monospace" font-size="15" fill="#8a94a8">github.com/yaleedhaque &middot; Dhaka, Bangladesh</text>
+  <path d="M0 212 Q 160 182 320 212 T 640 212 T 960 212 T 1280 212 V 240 H 0 Z" fill="url(#wave)" opacity="0.9"/>
+  <path d="M0 226 Q 160 200 320 226 T 640 226 T 960 226 T 1280 226 V 240 H 0 Z" fill="#00e5ff" opacity="0.45"/>
+</svg>
