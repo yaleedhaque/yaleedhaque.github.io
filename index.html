@@ -1,8 +1,8 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Md. Yaleed Haque — Developer</title>
   <meta name="description" content="Md. Yaleed Haque — C#/.NET and Kotlin developer in Bangladesh. Phones into gamepads, PCs into agents. Local-first, zero cloud.">
   <meta name="author" content="Md. Yaleed Haque">
@@ -12,168 +12,306 @@
   <meta property="og:url" content="https://yaleedhaque.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;600&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+      }
+    }
+  </script>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230A0E16'/%3E%3Ccircle cx='11' cy='11' r='3.4' fill='%233ECF8E'/%3E%3Ccircle cx='21' cy='11' r='3.4' fill='%23FF5D5D'/%3E%3Ccircle cx='11' cy='21' r='3.4' fill='%234E8BFF'/%3E%3Ccircle cx='21' cy='21' r='3.4' fill='%23FFD166'/%3E%3C/svg%3E">
 </head>
 <body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div id="boot" aria-hidden="true">
+    <div class="boot-box">
+      <p class="boot-title mono">YH&nbsp;SYSTEM&nbsp;INIT</p>
+      <div class="boot-log mono" id="boot-log"></div>
+      <p class="boot-skip mono">click anywhere to skip</p>
+    </div>
+  </div>
+
   <a class="skip" href="#projects">Skip to projects</a>
+  <div class="grid-bg" aria-hidden="true"></div>
 
   <header class="topbar">
-    <a class="wordmark" href="#top">yh<span class="dot">.</span></a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav-inner">
+      <a class="wordmark" href="#top">yh<span class="dot">.</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn-nav" href="https://github.com/yaleedhaque" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="sysline"><span class="pulse" aria-hidden="true"></span>GPAD.CORE v1.1.4 &middot; BANGLADESH &middot; ONLINE</p>
-        <p class="coords">23.8103&deg;N 90.4125&deg;E &mdash; DHAKA</p>
-        <h1>Md. Yaleed<br>Haque</h1>
-        <p class="tagline">Phones into gamepads. PCs into agents.<br>Local-first software that runs on <em>your</em> network.</p>
-
-        <div class="boot" role="img" aria-label="Terminal boot log">
-          <span>&gt; boot complete &mdash; hotspot <b>gamepad_server</b> ready</span>
-          <span>&gt; endpoint 192.168.137.1:9876 online</span>
-          <span>&gt; players connected: <b class="ok">4/8</b></span>
-          <span>&gt; waiting for input&hellip;<span class="caret" aria-hidden="true"></span></span>
+      <canvas id="hero-3d" aria-hidden="true"></canvas>
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="status-pill">
+          <span class="pulse"></span>
+          <span>ONLINE &middot; DHAKA, BANGLADESH</span>
         </div>
-
-        <div class="cta">
-          <a class="btn btn-primary" href="#projects">See the projects</a>
-          <a class="btn btn-ghost" href="https://github.com/yaleedhaque" rel="noopener" target="_blank">github.com/yaleedhaque</a>
+        <h1>Infrastructure built to carry <em>your ideas forward</em></h1>
+        <p class="hero-sub">Local-first software that runs on your network. Phones into gamepads, PCs into agents. Zero cloud, zero compromise.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary magnetic" href="#projects">See the projects</a>
+          <a class="btn btn-ghost magnetic" href="https://github.com/yaleedhaque" target="_blank" rel="noopener">github.com/yaleedhaque</a>
         </div>
+        <p class="hero-note">All work is public. No frameworks. No tracking.</p>
       </div>
+    </section>
 
-      <div class="pad-wrap" aria-hidden="true">
-        <div class="pad" id="pad">
-          <div class="pad-face">
-            <div class="dpad">
-              <span class="d d-u"></span>
-              <span class="d d-l"></span>
-              <span class="d d-d"></span>
-              <span class="d d-r"></span>
-            </div>
-            <div class="stick stick-l"></div>
-            <div class="stick stick-r"></div>
-            <div class="abxy">
-              <button class="face face-a" data-slot="0" tabindex="-1"><span>P1</span></button>
-              <button class="face face-b" data-slot="1" tabindex="-1"><span>P2</span></button>
-              <button class="face face-x" data-slot="2" tabindex="-1"><span>P3</span></button>
-              <button class="face face-y" data-slot="3" tabindex="-1"><span>P4</span></button>
-            </div>
+    <section class="stats">
+      <div class="stat"><b class="count" data-count="3" data-suffix="">0</b><span>projects shipped</span></div>
+      <div class="stat"><b class="count" data-count="275" data-suffix="+">0</b><span>StarkAgent commands</span></div>
+      <div class="stat"><b>KOTLIN</b><span>on Android</span></div>
+      <div class="stat"><b class="count" data-count="8" data-suffix="">0</b><span>players on one PC</span></div>
+    </section>
+
+    <section id="narrative" class="narrative">
+      <div class="scroll-sticky">
+        <div class="scroll-stage">
+          <div class="scroll-panel" data-side="left" data-panel="0">
+            <p class="scroll-label">The stack</p>
+            <h2>Everything a developer needs, in one system you actually control.</h2>
           </div>
-          <p class="pad-caption">hover a slot to light the pad</p>
+          <div class="scroll-panel" data-side="right" data-panel="1">
+            <p class="scroll-label">Realtime</p>
+            <h2>Low-level networking. Virtual input devices. Sensor streams.</h2>
+          </div>
+          <div class="scroll-panel" data-side="left" data-panel="2">
+            <p class="scroll-label">Local-first</p>
+            <h2>If a phone can become a gamepad or a desktop can act on its own, I build it.</h2>
+          </div>
+          <div class="scroll-panel" data-side="right" data-panel="3">
+            <p class="scroll-label">Shipped</p>
+            <h2>Three projects live. Zero cloud. All public on GitHub.</h2>
+          </div>
         </div>
+        <div class="scroll-hint">
+          <span>scroll</span>
+          <div class="scroll-line"><span></span></div>
+        </div>
+        <div class="scroll-progress"><div class="scroll-progress-bar"></div></div>
       </div>
     </section>
 
-    <section class="stats" aria-label="Snapshot">
-      <div class="stat"><b class="mono">4</b><span>projects shipped</span></div>
-      <div class="stat"><b class="mono">C#</b><span>primary language</span></div>
-      <div class="stat"><b class="mono">KOTLIN</b><span>on Android</span></div>
-      <div class="stat"><b class="mono">0</b><span>cloud dependency</span></div>
-    </section>
-
-    <section class="section" id="projects">
+    <section id="projects" class="section">
       <div class="section-head">
-        <p class="eyebrow mono">SLOT / PROJECTS</p>
-        <h2>Player slots</h2>
-        <p class="lede">Each project occupies a slot, same as a controller on the server. Hover to light the pad.</p>
+        <p class="eyebrow">PROJECTS</p>
+        <h2>Shipped and running</h2>
+        <p class="lede">Each project is live and public. Hover to explore.</p>
       </div>
-
       <div class="cards">
-        <article class="card" data-slot="0">
-          <div class="card-top">
-            <span class="slot mono">P1</span>
-            <span class="status ok"></span>
+        <article class="card">
+          <div class="card-header">
+            <span class="card-tag">P1</span>
+            <span class="status active"></span>
           </div>
           <h3>GamePadEcosystem</h3>
-          <p class="tags mono">C# / .NET 8 &middot; Kotlin / Compose</p>
-          <p class="desc">Android phones become wireless Xbox&nbsp;360 controllers for Windows. Zero cloud, sub-5ms latency, up to 8 players on one PC.</p>
-          <a class="link mono" href="https://github.com/yaleedhaque/GamePadEcosystem" rel="noopener" target="_blank">OPEN REPO&nbsp;&rarr;</a>
+          <p class="card-tech">C# / .NET 8 &middot; Kotlin / Compose</p>
+          <p class="card-desc">Android phones become wireless Xbox 360 controllers for Windows. Zero cloud, sub-5ms latency, up to 8 players on one PC.</p>
+          <a class="card-link" href="https://github.com/yaleedhaque/GamePadEcosystem" target="_blank" rel="noopener">OPEN REPO &rarr;</a>
         </article>
-
-        <article class="card" data-slot="1">
-          <div class="card-top">
-            <span class="slot mono">P2</span>
-            <span class="status ok"></span>
+        <article class="card">
+          <div class="card-header">
+            <span class="card-tag">P2</span>
+            <span class="status active"></span>
           </div>
           <h3>StarkAgent</h3>
-          <p class="tags mono">C# / .NET 8</p>
-          <p class="desc">An AI desktop control agent. 275+ commands that move the mouse, type, read the screen, and drive apps over a local TCP API.</p>
-          <a class="link mono" href="https://github.com/yaleedhaque/StarkAgent" rel="noopener" target="_blank">OPEN REPO&nbsp;&rarr;</a>
+          <p class="card-tech">C# / .NET 8</p>
+          <p class="card-desc">An AI desktop control agent. 275+ commands that move the mouse, type, read the screen, and drive apps over a local TCP API.</p>
+          <a class="card-link" href="https://github.com/yaleedhaque/StarkAgent" target="_blank" rel="noopener">OPEN REPO &rarr;</a>
         </article>
-
-        <article class="card" data-slot="2">
-          <div class="card-top">
-            <span class="slot mono">P3</span>
-            <span class="status warn"></span>
-          </div>
-          <h3>dgll</h3>
-          <p class="tags mono">Distributed systems</p>
-          <p class="desc">Distributed Graph Learning Library &mdash; training over graphs that won&rsquo;t fit on a single machine.</p>
-          <a class="link mono" href="https://github.com/yaleedhaque/dgll" rel="noopener" target="_blank">OPEN REPO&nbsp;&rarr;</a>
-        </article>
-
-        <article class="card" data-slot="3">
-          <div class="card-top">
-            <span class="slot mono">P4</span>
-            <span class="status warn"></span>
+        <article class="card">
+          <div class="card-header">
+            <span class="card-tag">P3</span>
+            <span class="status wip"></span>
           </div>
           <h3>Edge-project</h3>
-          <p class="tags mono">HTML</p>
-          <p class="desc">Experimental front-end work. In progress &mdash; more to come.</p>
-          <a class="link mono" href="https://github.com/yaleedhaque/Edge-project" rel="noopener" target="_blank">OPEN REPO&nbsp;&rarr;</a>
+          <p class="card-tech">HTML / CSS</p>
+          <p class="card-desc">Experimental front-end work. In progress &mdash; more to come.</p>
+          <a class="card-link" href="https://github.com/yaleedhaque/Edge-project" target="_blank" rel="noopener">OPEN REPO &rarr;</a>
         </article>
       </div>
     </section>
 
-    <section class="section about" id="about">
+    <section id="skills" class="section">
       <div class="section-head">
-        <p class="eyebrow mono">SYS / ABOUT</p>
-        <h2>Who&rsquo;s behind the controller</h2>
+        <p class="eyebrow">CAPABILITIES</p>
+        <h2>What I actually build with</h2>
+        <p class="lede">Not a feature list for its own sake &mdash; the six things that define how I work.</p>
       </div>
-      <div class="about-grid">
-        <p>I&rsquo;m a developer from Bangladesh &mdash; Dhaka, with roots in Pabna and Dinajpur. I like building things that feel like magic but run on a plain local network: no cloud, no accounts, no latency to spare.</p>
-        <p>Most of my work is low-level and close to the metal &mdash; UDP sockets, virtual input devices, sensor streams &mdash; wrapped in clean UI. If a phone can become a gamepad or a desktop can act on its own, I&rsquo;m interested.</p>
-        <ul class="focus mono">
-          <li>Local-first multiplayer</li>
-          <li>Virtual input devices</li>
-          <li>AI desktop automation</li>
-          <li>UDP / realtime networking</li>
-        </ul>
-        <ul class="tools mono">
-          <li>.NET 8 / C#</li>
-          <li>Kotlin / Compose</li>
-          <li>Win32 / ViGEm / SendInput</li>
-          <li>Windows Server / Android</li>
-        </ul>
+      <div class="pillars">
+        <div class="pillar">
+          <p class="pillar-num">01</p>
+          <h4>Real-time networking</h4>
+          <p>UDP sockets, custom protocols, sub-5ms latency. If it needs to move fast and stay local, I wire it up.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">02</p>
+          <h4>Virtual input devices</h4>
+          <p>ViGEm, SendInput, Win32 hooks. Turning phones into controllers, scripts into keystrokes, APIs into actions.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">03</p>
+          <h4>AI desktop automation</h4>
+          <p>Screen reading, mouse control, app driving. Agents that operate your PC without cloud dependency.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">04</p>
+          <h4>.NET 8 / C#</h4>
+          <p>Low-level systems work wrapped in clean architecture. From TCP servers to virtual device drivers.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">05</p>
+          <h4>Kotlin / Compose</h4>
+          <p>Android apps that talk to Windows over local networks. Sensor streams, UI, and wireless protocols.</p>
+        </div>
+        <div class="pillar">
+          <p class="pillar-num">06</p>
+          <h4>Zero-cloud architecture</h4>
+          <p>No telemetry, no accounts, no servers to lease. Systems that run on a hotspot, a LAN, or a single machine.</p>
+        </div>
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section id="terminal" class="section terminal-section">
       <div class="section-head">
-        <p class="eyebrow mono">SYNC / CONTACT</p>
-        <h2>Drop in on the server</h2>
+        <p class="eyebrow">SYS / TERMINAL</p>
+        <h2>Ask the machine</h2>
+        <p class="lede">A live session. Type into it &mdash; it answers.</p>
       </div>
-      <p class="lede">All my work is public. Follow the repo, open an issue, or just say hello.</p>
-      <div class="cta">
-        <a class="btn btn-primary" href="https://github.com/yaleedhaque" rel="noopener" target="_blank">github.com/yaleedhaque</a>
-        <a class="btn btn-ghost" href="mailto:yaleedhaque@users.noreply.github.com">email me</a>
+      <div class="terminal">
+        <div class="terminal-bar mono">
+          <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+          <span class="terminal-title">yaleed@localhost: ~</span>
+        </div>
+        <div class="terminal-body mono" id="terminal-body"></div>
+        <div class="terminal-input mono">
+          <span class="prompt">yaleed@localhost:~$</span>
+          <input type="text" id="terminal-input" autocomplete="off" spellcheck="false" aria-label="Terminal input" placeholder="type a command &mdash; try help">
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="section-head">
+        <p class="eyebrow">ABOUT</p>
+        <h2>Built to hold up.<br>Designed to be <em>yours</em>.</h2>
+      </div>
+      <div class="about-story">
+        <div class="about-left">
+          <h3>The trade nobody should have to make</h3>
+        </div>
+        <div class="about-right">
+          <p>Most platforms hand you one or the other &mdash; infrastructure that survives a busy day, or code you can genuinely shape. I was not willing to trade one for the other, so I build things that do both.</p>
+          <p>I'm a developer from Bangladesh &mdash; Dhaka, with roots in Pabna and Dinajpur. I like building things that feel like magic but run on a plain local network: no cloud, no accounts, no latency to spare.</p>
+          <p class="about-highlight">Most of my work is low-level and close to the metal &mdash; UDP sockets, virtual input devices, sensor streams &mdash; wrapped in clean UI. If a phone can become a gamepad or a desktop can act on its own, I'm interested.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section beliefs-section">
+      <div class="section-head">
+        <h2>What I hold to</h2>
+      </div>
+      <div class="beliefs">
+        <div class="belief">
+          <h4>Your network is your network</h4>
+          <p>All my work is local-first. No telemetry, no accounts, no cloud dependency. Your data stays on your machines.</p>
+        </div>
+        <div class="belief">
+          <h4>Control should not require a degree</h4>
+          <p>The moment a tool makes you choose between a locked interface and a code editor, it has failed. Real control belongs in the hands of the person using it.</p>
+        </div>
+        <div class="belief">
+          <h4>Say the number</h4>
+          <p>Latency, capacity and limits are published up front. If something is not ready yet, I say so instead of implying it ships today.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quotes-section">
+      <div class="quotes">
+        <figure class="quote">
+          <blockquote>"Phones became controllers in an afternoon. It was faster than buying actual hardware."</blockquote>
+          <figcaption>Local multiplayer session &mdash; 4 players</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"The agent reads my screen and types for me. No API keys, no cloud bill."</blockquote>
+          <figcaption>StarkAgent desktop automation</figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>"Sub-5ms over WiFi. That's faster than most Bluetooth controllers."</blockquote>
+          <figcaption>GamePadEcosystem benchmark</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <div class="contact-box">
+        <div class="contact-left">
+          <h2>Drop in on the server</h2>
+          <p>All my work is public. Follow the repo, open an issue, or just say hello.</p>
+        </div>
+        <div class="contact-right">
+          <a class="btn btn-primary" href="https://github.com/yaleedhaque" target="_blank" rel="noopener">github.com/yaleedhaque</a>
+          <a class="btn btn-ghost" href="mailto:yaleedhaque@users.noreply.github.com">email me</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Md. Yaleed Haque</p>
-    <p class="mono">Built by hand &middot; no frameworks &middot; no tracking</p>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-name">Md. Yaleed Haque</p>
+        <p class="footer-tag">Local-first software from Bangladesh.</p>
+      </div>
+      <div class="footer-col">
+        <p class="footer-label">Navigate</p>
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#terminal">Terminal</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-label">Code</p>
+        <ul>
+          <li><a href="https://github.com/yaleedhaque/GamePadEcosystem" target="_blank" rel="noopener">GamePadEcosystem</a></li>
+          <li><a href="https://github.com/yaleedhaque/StarkAgent" target="_blank" rel="noopener">StarkAgent</a></li>
+          <li><a href="https://github.com/yaleedhaque/Edge-project" target="_blank" rel="noopener">Edge-project</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <p class="footer-label">Connect</p>
+        <ul>
+          <li><a href="https://github.com/yaleedhaque" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="mailto:yaleedhaque@users.noreply.github.com">Email</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Md. Yaleed Haque</p>
+      <p class="mono">Built by hand &middot; no frameworks &middot; no tracking</p>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="script.js"></script>
+  <script type="module" src="bg.js"></script>
 </body>
 </html>
