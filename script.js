@@ -1,4 +1,7 @@
 (() => {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  window.scrollTo(0, 0);
+
   const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -286,7 +289,7 @@
       booted = true;
       printBlock(bootLines, () => {
         termInput.disabled = false;
-        termInput.focus();
+        termInput.focus({ preventScroll: true });
       });
     };
 
