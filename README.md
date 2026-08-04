@@ -1,0 +1,82 @@
+# yaleedhaque.github.io — Portfolio
+
+Single-page GitHub Pages portfolio for **Md. Yaleed Haque** (C#/.NET + Kotlin developer).
+
+Live: https://yaleedhaque.github.io · Deploys by pushing to `main` (~1–2 min rebuild).
+
+> Developer-facing README — design tokens, page structure, behaviors, performance rules, verification checklist, and history.
+
+---
+
+## Stack (100% free)
+
+Plain HTML/CSS/JS — **no build step, no npm**. External CDNs only: Google Fonts (Fraunces/Inter/JetBrains Mono) + `three@0.160.0` via importmap from unpkg.
+
+## Files (5)
+
+| File | Purpose |
+|---|---|
+| `index.html` | All content/markup |
+| `styles.css` | All styling (~810 lines) |
+| `script.js` | All interactivity (~306 lines), one IIFE |
+| `bg.js` | Three.js hero background, ES module (loaded at end of body as `<script type="module">`) |
+| `banner.png` / `banner.svg` | Profile banner assets (rasterized PNG is the one referenced in the profile README) |
+
+## Design tokens (styles.css `:root`)
+
+- `--bg #06070d`, `--bg-2 #0b0d17`, `--ink/--mist #eef1f8`, `--mist-dim #8b94a9`
+- `--aurora/--aurora-violet #a78bfa`, `--aurora-cyan #67e8f9`, `--line rgba(255,255,255,.12)`
+- Fonts: `--display` Fraunces (serif headings), `--body` Inter, `--mono` JetBrains Mono
+- Signature look: dark + violet/cyan aurora accents, 1px `rgba(255,255,255,.12)` borders, uppercase mono eyebrows, **square corners** (no border-radius), `html{scroll-behavior:smooth}`
+
+## Page structure (index.html sections, in order)
+
+`.topbar` (nav: Projects/Skills/Terminal/About/Contact + GitHub) → `main#top` → `.hero` (canvas#hero-3d + orb-1/2 + status-pill + h1 + hero-sub + 2 magnetic CTAs) → `.stats` (4 `.stat`; 3 have `.count` animated counters) → `#narrative` (scroll-sticky stage, 4 `.scroll-panel` data-side left/right, scroll-hint + progress bar) → `#projects` (3 `.card` P1 GamePadEcosystem / P2 StarkAgent / P3 Edge-project) → `#skills` (6 `.pillar`) → `#terminal` (.terminal + #terminal-body + #terminal-input) → `#about` → `.beliefs-section` (3) → `.quotes-section` (3) → `#contact` (.contact-box) → footer.
+
+**Nav ids must exist:** `#top #projects #skills #terminal #about #contact`. Sections get `scroll-margin-top:90px` for the fixed header.
+
+## How to add a project
+
+Duplicate an `<article class="card">` in `#projects`, bump the P-number, set `.status` active/wip, update `.card-tech/.card-desc/.card-link`. Also update: stats `.count` for "projects shipped", narrative panel "Shipped" copy, terminal `projects` command array (script.js), footer Code column, and add to `#skills`/terminal `skills` if it's a new pillar/tech.
+
+## script.js behaviors
+
+1. `history.scrollRestoration="manual"` + `window.scrollTo(0,0)` on load.
+2. Boot overlay `#boot`: typewriter 9 lines (12–24 ms/char, 130 ms line gap), click-anywhere skip, hard 2600 ms cap → `.done` fade → remove at +900 ms; `reduceMotion` → instant.
+3. Magnetic buttons (pointermove translate, disabled on reduceMotion).
+4. Anchor links → `preventDefault` + `scrollIntoView({behavior:smooth, block:start})`.
+5. `revealOnScroll(selector, stagger)` → IntersectionObserver `.15` adds `.visible` (cards/pillars/quotes/stats/terminal/contact).
+6. Narrative scroll handler (rAF-throttled; per-panel opacity + translate3d drift + progress bar scaleX; **no blur**).
+7. `.count` counters (IO `.4`, 1200 ms cubic ease-out).
+8. Terminal: commands `help/whoami/projects/skills/philosophy/status/clear/contact` + boot lines after 600 ms; input focus uses `{preventScroll:true}` (**critical** — bare `focus()` scrolls to terminal on load).
+
+## bg.js (Three.js hero)
+
+- importmap `three@0.160.0`; **IIFE-wrapped** (top-level `return` in an ES module = silent fail — module must not fail, canvas stays 300×150).
+- N=110 aurora/cyan points + edges `lineSegments` + 10 packet spheres along edges; camera z=20; mouse-lerped rotation; antialias FALSE, pixelRatio capped 1.5, alpha canvas.
+- **Pauses while scrolling** (wheel/touchmove/scroll → 180 ms debounce markScrolling) + IntersectionObserver visible gate + `document.hidden`. This is the perf-critical behavior — added because GPU contention made Chrome smooth-scroll overshoot to page bottom.
+
+## Performance rules (Intel UHD 620 — keep it light)
+
+- NO animated `filter:blur` anywhere, NO `backdrop-filter`, NO animated grain, NO Lenis, NO custom cursor, NO per-frame JS scroll work (rAF-throttle if needed).
+- Everything GPU-cheap: transforms/opacity only.
+- Already removed for perf: Lenis, custom cursor, marquee, 3D card tilt + glare, grain animation, per-frame narrative blur, nav backdrop-filter.
+
+## Verification
+
+Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/275+/8); terminal `help` echoes; anchors land at top:90; canvas has webgl2 context. Local preview: `python -m http.server 8000` from repo dir → http://localhost:8000.
+
+---
+
+## History
+
+- **2026-08-02** — Portfolio v1 shipped: controller-HUD theme, interactive CSS gamepad signature (A/B/X/Y lights up on card hover, "player slots" P1-P4). GitHub profile updated via API (name/bio/location/blog). Profile banner: SVG-via-camo failed in browsers (poisoned camo cache; alt-text showed) → rasterized to `banner.png` with Edge headless from a `data:` URL (file:// and http:// both capture blank; System.Drawing rasterization drew nothing).
+- **2026-08-02** — GitHub SEO package: profile README rewritten (real H1, plain-text sections, truthful stack, featured-projects table, `llms.txt`), name-first bio, repo topics added.
+- **2026-08-04** — Portfolio v2 "futurist": researched 2026 award-winning portfolio patterns (WebGL/3D, scroll storytelling, custom cursor, magnetic buttons, terminal, boot loader, counters, 3D tilt, Lenis) and implemented them; then a perf pass (user: "scrolling stops/pauses, laggy") removed blur/backdrop-filter/animated-grain and tuned Lenis to 0.16. Edge-project is P3 (dgll topic removed; narrative says "Three projects live").
+
+---
+
+## Git notes
+
+- Per-repo identity REQUIRED (global has none): `git config user.name "Md. Yaleed Haque"` / `user.email yaleedhaque@users.noreply.github.com`.
+- ⚠ Never re-save files via PowerShell `Set-Content`/`Get-Content` — it mangles UTF-8 (em/en-dashes → mojibake). Use an editor that preserves UTF-8.
