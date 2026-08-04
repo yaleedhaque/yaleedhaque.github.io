@@ -121,6 +121,7 @@ import * as THREE from "three";
   };
   window.addEventListener("wheel", markScrolling, { passive: true });
   window.addEventListener("touchmove", markScrolling, { passive: true });
+  window.addEventListener("scroll", markScrolling, { passive: true });
 
   function animate() {
     raf = requestAnimationFrame(animate);
