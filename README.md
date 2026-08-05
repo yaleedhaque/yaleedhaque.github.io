@@ -80,3 +80,7 @@ Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/2
 
 - Per-repo identity REQUIRED (global has none): `git config user.name "Md. Yaleed Haque"` / `user.email yaleedhaque@users.noreply.github.com`.
 - ⚠ Never re-save files via PowerShell `Set-Content`/`Get-Content` — it mangles UTF-8 (em/en-dashes → mojibake). Use an editor that preserves UTF-8.
+
+---
+
+**Md. Yaleed Haque** — [GitHub](https://github.com/yaleedhaque) · [Portfolio](https://yaleedhaque.github.io) · yaleedhaque@users.noreply.github.com
