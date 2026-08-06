@@ -1,0 +1,4 @@
+# Disable Jekyll processing on GitHub Pages. This is a static site that ships its
+# own index.html and runs entirely on the client, so it needs no Jekyll build.
+# Without this, the classic Pages builder runs `jekyll build`, which timed out
+# / failed to build as the site grew.
