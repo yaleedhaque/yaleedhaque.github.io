@@ -13,9 +13,10 @@
       ["> yaleedhaque.dev v3.0 ............ INIT", 12],
       ["> gamepad_server.dll ............ LOADED", 12],
       ["> stark_agent.core ............... LOADED", 12],
+      ["> hid_remote.bt .................. LINKED", 12],
+      ["> lumen_torch.led ................ POWERED", 12],
+      ["> aether_compass.mag ............. CALIBRATED", 12],
       ["> binding udp://0.0.0.0:9876 ........ OK", 12],
-      ["> binding udp://0.0.0.0:9878 ........ OK", 12],
-      ["> wifi hotspot ................ ACTIVE", 12],
       ["> players connected ......... 4 / 8", 16],
       ["> cloud dependencies ................ 0", 16],
       ["> system online ................. WELCOME", 24]
@@ -213,11 +214,16 @@
       projects: [
         "[P1] GamePadEcosystem - phones as xbox 360 controllers, zero cloud",
         "[P2] StarkAgent - ai desktop agent, 275+ commands, local tcp api",
-        "[P3] Edge-project - experimental front-end work"
+        "[P3] BluetoothRemoteHid - wireless keyboard/touchpad/air-mouse over bluetooth hid",
+        "[P4] Lumen - torch, strobe, sos, morse send + decode from camera",
+        "[P5] AetherCompass - offline compass, all on-device",
+        "[P6] opencode-free-fallback - keep opencode sessions alive, free providers + warp rotation"
       ],
       skills: [
         "C# / .NET 8 ............ core systems",
-        "Kotlin / Compose ....... android clients",
+        "Kotlin / Compose ....... android apps: gamepads, remotes, torch, compass",
+        "Bluetooth HID / GATT ... phone as wireless keyboard / touchpad / mouse",
+        "sensors / camera ....... gyro air-mouse, morse decode, compass bearings",
         "UDP / realtime ......... wire protocol, sub-5ms",
         "Win32 / ViGEm / SendInput  virtual input devices",
         "local-first ............ zero cloud, zero telemetry"

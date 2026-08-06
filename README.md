@@ -31,7 +31,7 @@ Plain HTML/CSS/JS — **no build step, no npm**. External CDNs only: Google Font
 
 ## Page structure (index.html sections, in order)
 
-`.topbar` (nav: Projects/Skills/Terminal/About/Contact + GitHub) → `main#top` → `.hero` (canvas#hero-3d + orb-1/2 + status-pill + h1 + hero-sub + 2 magnetic CTAs) → `.stats` (4 `.stat`; 3 have `.count` animated counters) → `#narrative` (scroll-sticky stage, 4 `.scroll-panel` data-side left/right, scroll-hint + progress bar) → `#projects` (3 `.card` P1 GamePadEcosystem / P2 StarkAgent / P3 Edge-project) → `#skills` (6 `.pillar`) → `#terminal` (.terminal + #terminal-body + #terminal-input) → `#about` → `.beliefs-section` (3) → `.quotes-section` (3) → `#contact` (.contact-box) → footer.
+`.topbar` (nav: Projects/Skills/Terminal/About/Contact + GitHub) → `main#top` → `.hero` (canvas#hero-3d + orb-1/2 + status-pill + h1 + hero-sub + 2 magnetic CTAs) → `.stats` (4 `.stat`; 3 have `.count` animated counters) → `#narrative` (scroll-sticky stage, 4 `.scroll-panel` data-side left/right, scroll-hint + progress bar) → `#projects` (6 `.card` P1 GamePadEcosystem / P2 StarkAgent / P3 BluetoothRemoteHid / P4 Lumen / P5 AetherCompass / P6 opencode-free-fallback) → `#skills` (6 `.pillar`) → `#terminal` (.terminal + #terminal-body + #terminal-input) → `#about` → `.beliefs-section` (3) → `.quotes-section` (3) → `#contact` (.contact-box) → footer.
 
 **Nav ids must exist:** `#top #projects #skills #terminal #about #contact`. Sections get `scroll-margin-top:90px` for the fixed header.
 
@@ -73,6 +73,7 @@ Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/2
 - **2026-08-02** — Portfolio v1 shipped: controller-HUD theme, interactive CSS gamepad signature (A/B/X/Y lights up on card hover, "player slots" P1-P4). GitHub profile updated via API (name/bio/location/blog). Profile banner: SVG-via-camo failed in browsers (poisoned camo cache; alt-text showed) → rasterized to `banner.png` with Edge headless from a `data:` URL (file:// and http:// both capture blank; System.Drawing rasterization drew nothing).
 - **2026-08-02** — GitHub SEO package: profile README rewritten (real H1, plain-text sections, truthful stack, featured-projects table, `llms.txt`), name-first bio, repo topics added.
 - **2026-08-04** — Portfolio v2 "futurist": researched 2026 award-winning portfolio patterns (WebGL/3D, scroll storytelling, custom cursor, magnetic buttons, terminal, boot loader, counters, 3D tilt, Lenis) and implemented them; then a perf pass (user: "scrolling stops/pauses, laggy") removed blur/backdrop-filter/animated-grain and tuned Lenis to 0.16. Edge-project is P3 (dgll topic removed; narrative says "Three projects live").
+- **2026-08-06** — Portfolio v3 content refresh: projects grow from 3 → 6 shipped cards. Added the three newly released Android apps — **BluetoothRemoteHid** (P3, wireless keyboard/touchpad/air-mouse over Classic + BLE HID, v1.2.6), **Lumen** (P4, torch + Morse send/decode from camera, v1.1.0), **AetherCompass** (P5, offline compass, v1.0.2) — and **opencode-free-fallback** (P6). Dropped the empty Edge-project card. Stats "projects shipped" 3 → 6; narrative "Six projects live"; boot lines + terminal `projects`/`skills` arrays updated; Kotlin pillar + footer Code column updated; meta/hero copy mentions remotes & torches.
 
 ---
 
