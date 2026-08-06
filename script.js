@@ -10,12 +10,13 @@
   if (boot) {
     const log = document.getElementById("boot-log");
     const lines = [
-      ["> yaleedhaque.dev v3.0 ............ INIT", 12],
+      ["> yaleedhaque.dev v3.1 ............ INIT", 12],
       ["> gamepad_server.dll ............ LOADED", 12],
       ["> stark_agent.core ............... LOADED", 12],
       ["> hid_remote.bt .................. LINKED", 12],
       ["> lumen_torch.led ................ POWERED", 12],
       ["> aether_compass.mag ............. CALIBRATED", 12],
+      ["> edge_transcribe.py ............. READY", 12],
       ["> binding udp://0.0.0.0:9876 ........ OK", 12],
       ["> players connected ......... 4 / 8", 16],
       ["> cloud dependencies ................ 0", 16],
@@ -217,7 +218,8 @@
         "[P3] BluetoothRemoteHid - wireless keyboard/touchpad/air-mouse over bluetooth hid",
         "[P4] Lumen - torch, strobe, sos, morse send + decode from camera",
         "[P5] AetherCompass - offline compass, all on-device",
-        "[P6] opencode-free-fallback - keep opencode sessions alive, free providers + warp rotation"
+        "[P6] opencode-free-fallback - keep opencode sessions alive, free providers + warp rotation",
+        "[P7] Edge-project - self-hosted on-device whisper transcription, word-timed, txt/srt/vtt exports"
       ],
       skills: [
         "C# / .NET 8 ............ core systems",
@@ -225,6 +227,7 @@
         "Bluetooth HID / GATT ... phone as wireless keyboard / touchpad / mouse",
         "sensors / camera ....... gyro air-mouse, morse decode, compass bearings",
         "UDP / realtime ......... wire protocol, sub-5ms",
+        "Python / Flask ......... on-device whisper transcription (faster-whisper)",
         "Win32 / ViGEm / SendInput  virtual input devices",
         "local-first ............ zero cloud, zero telemetry"
       ],
