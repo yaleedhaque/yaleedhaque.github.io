@@ -219,7 +219,8 @@
         "[P4] Lumen - torch, strobe, sos, morse send + decode from camera",
         "[P5] AetherCompass - offline compass, all on-device",
         "[P6] opencode-free-fallback - keep opencode sessions alive, free providers + warp rotation",
-        "[P7] Edge-project - self-hosted on-device whisper transcription, word-timed, txt/srt/vtt exports"
+        "[P7] Edge-project - self-hosted on-device whisper transcription, word-timed, txt/srt/vtt exports",
+        "[P8] OmniFetch - windows video/audio/playlist downloader, yt-dlp + ffmpeg, batch + concurrent"
       ],
       skills: [
         "C# / .NET 8 ............ core systems",

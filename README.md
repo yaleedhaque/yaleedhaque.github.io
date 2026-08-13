@@ -31,7 +31,7 @@ Plain HTML/CSS/JS — **no build step, no npm**. External CDNs only: Google Font
 
 ## Page structure (index.html sections, in order)
 
-`.topbar` (nav: Projects/Skills/Terminal/About/Contact + GitHub) → `main#top` → `.hero` (canvas#hero-3d + orb-1/2 + status-pill + **h1 = name** + `.hero-role` catchy line + hero-sub + 2 magnetic CTAs) → `.stats` (4 `.stat`; 3 have `.count` animated counters) → `#narrative` (scroll-sticky stage, 4 `.scroll-panel` data-side left/right, scroll-hint + progress bar) → `#projects` (7 `.card` **P1–P7: GamePadEcosystem / StarkAgent / BluetoothRemoteHid / Lumen / AetherCompass / opencode-free-fallback / Edge-project**, each with a themed `.card-icon` SVG + `.card-tag` + `.status`) → `#skills` (7 `.pillar`) → `#terminal` (.terminal + #terminal-body + #terminal-input) → `#about` → `.beliefs-section` (3) → `.quotes-section` (3) → `#contact` (.contact-box) → footer.
+`.topbar` (nav: Projects/Skills/Terminal/About/Contact + GitHub) → `main#top` → `.hero` (canvas#hero-3d + orb-1/2 + status-pill + **h1 = name** + `.hero-role` catchy line + hero-sub + 2 magnetic CTAs) → `.stats` (4 `.stat`; 3 have `.count` animated counters) → `#narrative` (scroll-sticky stage, 4 `.scroll-panel` data-side left/right, scroll-hint + progress bar) → `#projects` (8 `.card` **P1–P8: GamePadEcosystem / StarkAgent / BluetoothRemoteHid / Lumen / AetherCompass / opencode-free-fallback / Edge-project / OmniFetch**, each with a themed `.card-icon` SVG + `.card-tag` + `.status`) → `#skills` (7 `.pillar`) → `#terminal` (.terminal + #terminal-body + #terminal-input) → `#about` → `.beliefs-section` (3) → `.quotes-section` (3) → `#contact` (.contact-box) → footer.
 
 **Nav ids must exist:** `#top #projects #skills #terminal #about #contact`. Sections get `scroll-margin-top:90px` for the fixed header.
 
@@ -70,6 +70,7 @@ Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/2
 
 ## History
 
+- **2026-08-13** — Projects **7 → 8**: added **OmniFetch** (P8, Windows video/audio/playlist downloader, Python/CustomTkinter + yt-dlp/ffmpeg, v1.0.0). New download-into-tray `.card-icon`; stats 7 → 8, narrative "Eight projects live", terminal `projects` array + footer Code column updated; meta/og descriptions 7 → 8.
 - **2026-08-02** — Portfolio v1 shipped: controller-HUD theme, interactive CSS gamepad signature (A/B/X/Y lights up on card hover, "player slots" P1-P4). GitHub profile updated via API (name/bio/location/blog). Profile banner: SVG-via-camo failed in browsers (poisoned camo cache; alt-text showed) → rasterized to `banner.png` with Edge headless from a `data:` URL (file:// and http:// both capture blank; System.Drawing rasterization drew nothing).
 - **2026-08-02** — GitHub SEO package: profile README rewritten (real H1, plain-text sections, truthful stack, featured-projects table, `llms.txt`), name-first bio, repo topics added.
 - **2026-08-04** — Portfolio v2 "futurist": researched 2026 award-winning portfolio patterns (WebGL/3D, scroll storytelling, custom cursor, magnetic buttons, terminal, boot loader, counters, 3D tilt, Lenis) and implemented them; then a perf pass (user: "scrolling stops/pauses, laggy") removed blur/backdrop-filter/animated-grain and tuned Lenis to 0.16. Edge-project is P3 (dgll topic removed; narrative says "Three projects live").
