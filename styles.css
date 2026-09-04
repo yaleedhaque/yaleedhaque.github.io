@@ -189,6 +189,15 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 22px;
 }
 .hero h1 em { color: var(--aurora-violet); font-style: normal; }
+.hero h1 .h1-handle {
+  font-family: var(--mono);
+  font-size: 0.32em;
+  font-weight: 500;
+  color: var(--aurora-cyan, #67e8f9);
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 
 .hero-role {
   font-family: var(--display);
