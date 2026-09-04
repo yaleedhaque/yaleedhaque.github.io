@@ -214,14 +214,18 @@
       ],
       projects: [
         "[P1] GamePadEcosystem - phones as xbox 360 controllers, zero cloud",
-        "[P2] StarkAgent - ai desktop agent, 275+ commands, local tcp api",
+        "[P2] StarkAgent - ai desktop agent, 295+ commands, local tcp api",
         "[P3] BluetoothRemoteHid - wireless keyboard/touchpad/air-mouse over bluetooth hid",
         "[P4] Lumen - torch, strobe, sos, morse send + decode from camera",
         "[P5] AetherCompass - offline compass, all on-device",
         "[P6] opencode-free-fallback - keep opencode sessions alive, free providers + warp rotation",
         "[P7] Edge-project - self-hosted on-device whisper transcription, word-timed, txt/srt/vtt exports",
         "[P8] OmniFetch - windows video/audio/playlist downloader, yt-dlp + ffmpeg, batch + concurrent",
-        "[P9] OmniFetch-Android - on-device youtube search/stream/download, bundled yt-dlp + ffmpeg"
+        "[P9] OmniFetch-Android - on-device youtube search/stream/download, bundled yt-dlp + ffmpeg",
+        "[W1] family-tapestry - collaborative family tree, real-time presence, exports, timeline + map",
+        "[W2] bkash-ecommerce - sellable bangladeshi shop template, manual bkash + whatsapp orders",
+        "[S1] stark-hotspot - wifi hotspot while staying on wifi, concurrent sta+ap on one radio",
+        "[T1] opencode-setup-kit - one-command opencode workstation setup for windows"
       ],
       skills: [
         "C# / .NET 8 ............ core systems",
