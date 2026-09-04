@@ -113,7 +113,6 @@
     });
   };
 
-  revealOnScroll(".card");
   revealOnScroll(".pillar", true);
   revealOnScroll(".quote", true);
   revealOnScroll(".stats");
