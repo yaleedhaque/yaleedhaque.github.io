@@ -64,7 +64,7 @@ Duplicate an `<article class="card">` in `#projects`, bump the P-number, set `.s
 
 ## Verification
 
-Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/275+/8); terminal `help` echoes; anchors land at top:90; canvas has webgl2 context. Local preview: `python -m http.server 8000` from repo dir → http://localhost:8000.
+Boot completes + removes; `scrollY:0` on fresh load; counters reach targets (3/295+/8); terminal `help` echoes; anchors land at top:90; canvas has webgl2 context. Local preview: `python -m http.server 8000` from repo dir → http://localhost:8000.
 
 ---
 
